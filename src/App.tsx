@@ -13,18 +13,6 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const ScrollToTop = () => {
-  const { pathname } = window.location;
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-};
-
-const ScrollToTopWrapper = () => {
-  return null;
-};
-
 import { useLocation } from "react-router-dom";
 
 const ScrollReset = () => {
