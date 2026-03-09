@@ -1,15 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
-import projectRestaurant from "@/assets/project-restaurant.jpg";
-import projectLawfirm from "@/assets/project-lawfirm.jpg";
-import projectEcommerce from "@/assets/project-ecommerce.jpg";
 
 const projects = [
-  { img: projectRestaurant, title: "Restaurant Website Concept", category: "Web Design" },
   { img: "/slike/gymweb.jpg", title: "Gym Website Concept", category: "Web Design" },
-  { img: projectLawfirm, title: "Law Firm Website Concept", category: "Corporate" },
-  { img: projectEcommerce, title: "Online Store Concept", category: "E-commerce" },
 ];
 
 const Portfolio = () => {
