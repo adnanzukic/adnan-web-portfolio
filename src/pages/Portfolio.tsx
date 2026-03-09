@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import projectRestaurant from "@/assets/project-restaurant.jpg";
-import projectGym from "@/assets/project-gym.jpg";
+import projectGym from "public/public/slike/gym.preview.jpg";
 import projectLawfirm from "@/assets/project-lawfirm.jpg";
 import projectEcommerce from "@/assets/project-ecommerce.jpg";
 
