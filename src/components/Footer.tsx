@@ -47,13 +47,17 @@ const Footer = () => {
             </h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/adnan-zuki%C4%87-b51607342/"
+                 target="_blank"
+                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
               >
                 <Linkedin size={18} />
               </a>
               <a
-                href="#"
+                href="https://github.com/adnanzukic"
+                 target="_blank"
+                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
               >
                 <Github size={18} />
