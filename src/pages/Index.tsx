@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/hero-bg.jpg";
 import projectRestaurant from "@/assets/project-restaurant.jpg";
-import projectGym from "@/assets/project-gym.jpg";
+import projectGym from "@/assets/project-gym.png";
 import projectLawfirm from "@/assets/project-lawfirm.jpg";
 import projectEcommerce from "@/assets/project-ecommerce.jpg";
 import {
