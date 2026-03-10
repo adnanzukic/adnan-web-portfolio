@@ -104,10 +104,10 @@ const Portfolio = () => {
                 </button>
 
                 <a
-                  href="/contact"
+                  href="mailto:adnan16zukic@gmail.com?subject=Website%20Project%20Inquiry&body=Hello%20Adnan,%20I%20am%20interested%20in%20a%20website%20similar%20to%20this%20concept.%20Please%20send%20me%20more%20details."
                   className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:opacity-90 transition"
                 >
-                  Request Similar Website
+                  Start a Similar Project
                 </a>
               </div>
             </div>
