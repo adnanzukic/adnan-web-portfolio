@@ -1,12 +1,16 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import gymweb from "@/assets/gymweb.jpg";
+import lawfirm from "@/assets/project-lawfirm.png";
+import ecommerce from "@/assets/project-ecommerce.png";
+import restaurant from "@/assets/project-restaurant.png";
 
 const projects = [
-  { img: "/slike/gymweb.jpg", title: "Gym Website Concept", category: "Web Design" },
-  { img: "@/assets/project-lawfirm.png", title: "Lawfirm Website Concept", category: "Web Design"},
-  { img: "@/assets/project-ecommerce.png", title: "Ecomerce Website Concept", category: "E-commerce"},
-  { img:  "@/assets/project-restaurant.png", title: "Restaurant Website Concept", category: "Web Design"},  
+  { img: gymweb, title: "Gym Website Concept", category: "Web Design" },
+  { img: lawfirm, title: "Lawfirm Website Concept", category: "Web Design" },
+  { img: ecommerce, title: "Ecommerce Website Concept", category: "E-commerce" },
+  { img: restaurant, title: "Restaurant Website Concept", category: "Web Design" },
 ];
 
 const Portfolio = () => {
