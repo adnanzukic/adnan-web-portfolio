@@ -5,7 +5,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import projectRestaurant from "@/assets/project-restaurant.png";
 import projectGym from "@/assets/project-gym.png";
 import projectLawfirm from "@/assets/project-lawfirm.jpg";
-import projectEcommerce from "@/assets/project-ecommerce.jpg";
+import projectEcommerce from "@/assets/project-ecommerce.png";
 import {
   Globe, RefreshCw, FileText, Search, Code2, ShoppingCart,
   MessageSquare, ClipboardList, Paintbrush, Rocket,
