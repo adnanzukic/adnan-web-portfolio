@@ -14,7 +14,7 @@ const Portfolio = () => {
       <section className="pt-32 section-padding">
         <div className="container-narrow">
           <AnimatedSection>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">Sisa sisa sisari</h1>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">Portfolio</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mb-16">
               A showcase of concept projects demonstrating modern web design.
             </p>
