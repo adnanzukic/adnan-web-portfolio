@@ -4,6 +4,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const projects = [
   { img: "/slike/gymweb.jpg", title: "Gym Website Concept", category: "Web Design" },
+  { img "@/assets/project-lawfirm.png", title: "Lawfirm Website Concept", category: "Web Design"},
+  { img "@/assets/project-ecommerce.png", title: "Ecomerce Website Concept", category: "E-commerce"},
+  { img  "@/assets/project-restaurant.png", title: "Restaurant Website Concept", category: "Web Design"},  
 ];
 
 const Portfolio = () => {
