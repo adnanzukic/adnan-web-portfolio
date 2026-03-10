@@ -4,7 +4,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/hero-bg.jpg";
 import projectRestaurant from "@/assets/project-restaurant.png";
 import projectGym from "@/assets/project-gym.png";
-import projectLawfirm from "@/assets/project-lawfirm.jpg";
+import projectLawfirm from "@/assets/project-lawfirm.png";
 import projectEcommerce from "@/assets/project-ecommerce.png";
 import {
   Globe, RefreshCw, FileText, Search, Code2, ShoppingCart,
