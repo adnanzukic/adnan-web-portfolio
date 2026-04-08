@@ -69,7 +69,7 @@ const Index = () => {
                 href="/services"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg border border-border text-foreground font-medium text-lg hover:bg-muted transition-all hover:scale-105"
               >
-                View Services
+                
               </a>
             </div>
           </AnimatedSection>
