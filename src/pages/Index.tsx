@@ -3,10 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/hero-bg.jpg";
-import projectRestaurant from "@/assets/project-restaurant.png";
-import projectGym from "@/assets/project-gym.png";
-import projectLawfirm from "@/assets/project-lawfirm.png";
-import projectEcommerce from "@/assets/project-ecommerce.png";
+import projectSalon from "@/assets/project-salon.webp";
+import projectBarber from "@/assets/project-barber.webp";
 import {
   Globe, RefreshCw, FileText, Search, Code2, ShoppingCart,
   MessageSquare, ClipboardList, Paintbrush, Rocket,
@@ -29,10 +27,8 @@ const steps = [
 ];
 
 const projects = [
-  { img: projectRestaurant, title: "Koncept sajta za restoran", category: "Web dizajn" },
-  { img: projectGym, title: "Koncept sajta za teretanu", category: "Web dizajn" },
-  { img: projectLawfirm, title: "Koncept sajta za advokatsku kancelariju", category: "Web dizajn" },
-  { img: projectEcommerce, title: "Koncept online prodavnice", category: "Online prodavnica" },
+  { img: projectSalon, title: "Studio Pramen", category: "Frizerski i kozmetički salon", href: "/demo/salon-pramen/" },
+  { img: projectBarber, title: "Oštra Britva", category: "Brijačnica", href: "/demo/brijacnica-ostra-britva/" },
 ];
 
 const Index = () => {
@@ -137,26 +133,32 @@ const Index = () => {
             <div className="text-center mb-16">
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">Projekti</h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Konceptualni projekti koji prikazuju savremeni web dizajn.
+                Demo sajtovi za lokalne biznise. Otvorite ih i isprobajte.
               </p>
             </div>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((p, i) => (
               <AnimatedSection key={p.title} delay={i * 100}>
-                <div className="glass-card overflow-hidden group cursor-pointer">
+                <a
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-card overflow-hidden group block"
+                >
                   <div className="overflow-hidden">
                     <img
                       src={p.img}
-                      alt={p.title}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                      alt={`Demo sajt: ${p.title}`}
+                      loading="lazy"
+                      className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="p-6">
                     <span className="text-primary text-xs font-medium uppercase tracking-wider">{p.category}</span>
                     <h3 className="font-heading text-lg font-semibold text-foreground mt-1">{p.title}</h3>
                   </div>
-                </div>
+                </a>
               </AnimatedSection>
             ))}
           </div>
