@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -65,12 +66,12 @@ const Index = () => {
               >
                 Započnimo projekat
               </a>
-              <a
-                href="/services"
+              <Link
+                to="/services"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg border border-border text-foreground font-medium text-lg hover:bg-muted transition-all hover:scale-105"
               >
                 Pogledajte usluge
-              </a>
+              </Link>
             </div>
           </AnimatedSection>
         </div>
