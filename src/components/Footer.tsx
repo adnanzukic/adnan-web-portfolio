@@ -12,29 +12,35 @@ const Footer = () => {
               Adnan<span className="text-primary">.</span>
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Freelance web developer helping small businesses build modern websites.
+              Freelance web developer koji malim biznisima pomaže da dobiju moderan sajt.
             </p>
             <p className="text-muted-foreground text-sm mt-4">
-              Email:{" "}
+              E-mail:{" "}
               <a href="mailto:adnan16zukic@gmail.com" className="text-primary hover:underline">
                 adnan16zukic@gmail.com
               </a>
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Brzi linkovi */}
           <div>
             <h4 className="font-heading text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-              Quick Links
+              Brzi linkovi
             </h4>
             <nav className="flex flex-col gap-3">
-              {["Home", "About", "Services", "Portfolio", "Contact"].map((item) => (
+              {[
+                { label: "Početna", path: "/" },
+                { label: "O meni", path: "/about" },
+                { label: "Usluge", path: "/services" },
+                { label: "Portfolio", path: "/portfolio" },
+                { label: "Kontakt", path: "/contact" },
+              ].map((item) => (
                 <Link
-                  key={item}
-                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  key={item.path}
+                  to={item.path}
                   className="text-muted-foreground text-sm hover:text-primary transition-colors"
                 >
-                  {item}
+                  {item.label}
                 </Link>
               ))}
             </nav>
@@ -43,7 +49,7 @@ const Footer = () => {
           {/* Social */}
           <div>
             <h4 className="font-heading text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-              Connect
+              Povežimo se
             </h4>
             <div className="flex gap-4">
               <a
@@ -68,7 +74,7 @@ const Footer = () => {
 
         <div className="border-t border-border/50 mt-12 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Adnan – Web Developer
+            © {new Date().getFullYear()} Adnan – Web developer
           </p>
         </div>
       </div>

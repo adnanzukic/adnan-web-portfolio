@@ -3,11 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
-  { label: "Services", path: "/services" },
+  { label: "Početna", path: "/" },
+  { label: "O meni", path: "/about" },
+  { label: "Usluge", path: "/services" },
   { label: "Portfolio", path: "/portfolio" },
-  { label: "Contact", path: "/contact" },
+  { label: "Kontakt", path: "/contact" },
 ];
 
 interface HeaderProps {
@@ -61,7 +61,7 @@ const Header = ({ heroMode = false }: HeaderProps) => {
             href="mailto:adnan16zukic@gmail.com"
             className="inline-flex items-center px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-all hover:scale-105"
           >
-            Start a Project
+            Započnimo projekat
           </a>
         </nav>
 
@@ -96,7 +96,7 @@ const Header = ({ heroMode = false }: HeaderProps) => {
               href="mailto:adnan16zukic@gmail.com"
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium"
             >
-              Start a Project
+              Započnimo projekat
             </a>
           </div>
         </nav>
