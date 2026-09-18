@@ -12,26 +12,26 @@ import {
 } from "lucide-react";
 
 const services = [
-  { icon: Globe, title: "Website Development", desc: "Custom modern websites for businesses." },
-  { icon: RefreshCw, title: "Website Redesign", desc: "Improve the design and performance of existing websites." },
-  { icon: FileText, title: "Landing Pages", desc: "High-converting landing pages for marketing campaigns." },
-  { icon: Search, title: "SEO Optimization", desc: "Improve visibility on search engines." },
-  { icon: Code2, title: "WordPress Development", desc: "Professional WordPress websites and customization." },
-  { icon: ShoppingCart, title: "E-commerce Websites", desc: "Online stores for selling products and services." },
+  { icon: Globe, title: "Izrada web sajtova", desc: "Moderni sajtovi po mjeri za vaš biznis." },
+  { icon: RefreshCw, title: "Redizajn sajta", desc: "Unaprijedite izgled i brzinu vašeg postojećeg sajta." },
+  { icon: FileText, title: "Landing stranice", desc: "Landing stranice koje posjetioce pretvaraju u kupce, idealne za marketinške kampanje." },
+  { icon: Search, title: "SEO optimizacija", desc: "Budite vidljiviji na Google-u i drugim pretraživačima." },
+  { icon: Code2, title: "WordPress razvoj", desc: "Profesionalni WordPress sajtovi i prilagođavanje prema vašim potrebama." },
+  { icon: ShoppingCart, title: "Online prodavnice", desc: "Online prodavnice za prodaju vaših proizvoda i usluga." },
 ];
 
 const steps = [
-  { icon: MessageSquare, num: "01", title: "Consultation", desc: "Understanding your business and goals." },
-  { icon: ClipboardList, num: "02", title: "Planning", desc: "Creating website structure and strategy." },
-  { icon: Paintbrush, num: "03", title: "Design & Development", desc: "Building the website with modern technologies." },
-  { icon: Rocket, num: "04", title: "Launch", desc: "Publishing the website and optimizing performance." },
+  { icon: MessageSquare, num: "01", title: "Konsultacije", desc: "Upoznajem vaš biznis i vaše ciljeve." },
+  { icon: ClipboardList, num: "02", title: "Planiranje", desc: "Definišem strukturu i strategiju sajta." },
+  { icon: Paintbrush, num: "03", title: "Dizajn i razvoj", desc: "Izrađujem sajt koristeći moderne tehnologije." },
+  { icon: Rocket, num: "04", title: "Objava", desc: "Objavljujem sajt i optimizujem njegove performanse." },
 ];
 
 const projects = [
-  { img: projectRestaurant, title: "Restaurant Website Concept", category: "Web Design" },
-  { img: projectGym, title: "Gym Website Concept", category: "Web Design" },
-  { img: projectLawfirm, title: "Law Firm Website Concept", category: "Web Design" },
-  { img: projectEcommerce, title: "Online Store Concept", category: "E-commerce" },
+  { img: projectRestaurant, title: "Koncept sajta za restoran", category: "Web dizajn" },
+  { img: projectGym, title: "Koncept sajta za teretanu", category: "Web dizajn" },
+  { img: projectLawfirm, title: "Koncept sajta za advokatsku kancelariju", category: "Web dizajn" },
+  { img: projectEcommerce, title: "Koncept online prodavnice", category: "Online prodavnica" },
 ];
 
 const Index = () => {
@@ -48,13 +48,13 @@ const Index = () => {
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <AnimatedSection>
             <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
-              Modern Websites for{" "}
-              <span className="gradient-text">Small Businesses</span>
+              Moderni sajtovi za{" "}
+              <span className="gradient-text">male biznise</span>
             </h1>
           </AnimatedSection>
           <AnimatedSection delay={200}>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-              I build fast, modern and professional websites that help businesses attract more customers online.
+              Izrađujem brze, moderne i profesionalne sajtove koji pomažu vašem biznisu da privuče više kupaca putem interneta.
             </p>
           </AnimatedSection>
           <AnimatedSection delay={400}>
@@ -63,13 +63,13 @@ const Index = () => {
                 href="mailto:adnan16zukic@gmail.com"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-primary text-primary-foreground font-medium text-lg hover:bg-primary/90 transition-all hover:scale-105"
               >
-                Start a Project
+                Započnimo projekat
               </a>
               <a
                 href="/services"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg border border-border text-foreground font-medium text-lg hover:bg-muted transition-all hover:scale-105"
               >
-                View Services
+                Pogledajte usluge
               </a>
             </div>
           </AnimatedSection>
@@ -81,9 +81,9 @@ const Index = () => {
         <div className="container-narrow">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">Services</h2>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">Usluge</h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Everything you need to establish a strong online presence.
+                Sve što vam je potrebno za snažno prisustvo na internetu.
               </p>
             </div>
           </AnimatedSection>
@@ -106,9 +106,9 @@ const Index = () => {
         <div className="container-narrow">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">How I Work</h2>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">Kako radim</h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                A simple process to bring your website to life.
+                Jednostavan proces kroz koji vaš sajt postaje stvarnost.
               </p>
             </div>
           </AnimatedSection>
@@ -134,9 +134,9 @@ const Index = () => {
         <div className="container-narrow">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">Projects</h2>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">Projekti</h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Concept projects showcasing modern web design.
+                Konceptualni projekti koji prikazuju savremeni web dizajn.
               </p>
             </div>
           </AnimatedSection>
@@ -167,16 +167,16 @@ const Index = () => {
         <div className="container-narrow text-center">
           <AnimatedSection>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Ready to build your website?
+              Spremni za izradu vašeg sajta?
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-              If you need a modern website for your business, feel free to contact me.
+              Ako vam je potreban moderan sajt za vaš biznis, slobodno me kontaktirajte.
             </p>
             <a
               href="mailto:adnan16zukic@gmail.com"
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-primary text-primary-foreground font-medium text-lg hover:bg-primary/90 transition-all hover:scale-105"
             >
-              Start a Project
+              Započnimo projekat
             </a>
           </AnimatedSection>
         </div>
