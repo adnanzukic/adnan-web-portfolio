@@ -60,12 +60,12 @@ const Index = () => {
           </AnimatedSection>
           <AnimatedSection delay={400}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:adnan16zukic@gmail.com"
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-primary text-primary-foreground font-medium text-lg hover:bg-primary/90 transition-all hover:scale-105"
               >
                 Započnimo projekat
-              </a>
+              </Link>
               <Link
                 to="/services"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg border border-border text-foreground font-medium text-lg hover:bg-muted transition-all hover:scale-105"
@@ -173,12 +173,12 @@ const Index = () => {
             <p className="text-muted-foreground max-w-xl mx-auto mb-8">
               Ako vam je potreban moderan sajt za vaš biznis, slobodno me kontaktirajte.
             </p>
-            <a
-              href="mailto:adnan16zukic@gmail.com"
+            <Link
+              to="/contact"
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-primary text-primary-foreground font-medium text-lg hover:bg-primary/90 transition-all hover:scale-105"
             >
               Započnimo projekat
-            </a>
+            </Link>
           </AnimatedSection>
         </div>
       </section>

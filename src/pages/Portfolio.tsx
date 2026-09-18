@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import { whatsappLink, viberLink } from "@/lib/contact";
 import gymweb from "@/assets/project-gym.png";
 import lawfirm from "@/assets/project-lawfirm.png";
 import ecommerce from "@/assets/project-ecommerce.png";
@@ -95,7 +96,7 @@ const Portfolio = () => {
                 usluge profesionalno predstave online.
               </p>
 
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 <button
                   onClick={() => setSelectedProject(null)}
                   className="px-6 py-2 border border-border rounded-md hover:bg-muted transition"
@@ -104,10 +105,19 @@ const Portfolio = () => {
                 </button>
 
                 <a
-                  href="mailto:adnan16zukic@gmail.com?subject=Upit%20za%20izradu%20sajta&body=Pozdrav%20Adnane,%20zanima%20me%20sajt%20sli%C4%8Dan%20ovom%20konceptu.%20Molim%20Vas%20da%20mi%20po%C5%A1aljete%20vi%C5%A1e%20detalja."
+                  href={whatsappLink(`Pozdrav Adnane, zanima me sajt sličan konceptu "${selectedProject.title}". Molim Vas za više detalja.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:opacity-90 transition"
                 >
-                  Zatražite sličan projekat
+                  Pišite mi na WhatsApp
+                </a>
+
+                <a
+                  href={viberLink}
+                  className="px-6 py-2 border border-border rounded-md hover:bg-muted transition"
+                >
+                  Viber
                 </a>
               </div>
             </div>
