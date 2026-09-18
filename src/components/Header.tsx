@@ -57,12 +57,12 @@ const Header = ({ heroMode = false }: HeaderProps) => {
               {link.label}
             </Link>
           ))}
-          <a
-            href="mailto:adnan16zukic@gmail.com"
+          <Link
+            to="/contact"
             className="inline-flex items-center px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-all hover:scale-105"
           >
             Započnimo projekat
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile toggle */}
@@ -92,12 +92,13 @@ const Header = ({ heroMode = false }: HeaderProps) => {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="mailto:adnan16zukic@gmail.com"
+            <Link
+              to="/contact"
+              onClick={() => setMobileOpen(false)}
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium"
             >
               Započnimo projekat
-            </a>
+            </Link>
           </div>
         </nav>
       )}

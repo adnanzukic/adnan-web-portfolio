@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Github } from "lucide-react";
+import { CONTACT, telLink, mailLink } from "@/lib/contact";
 
 const Footer = () => {
   return (
@@ -16,8 +17,14 @@ const Footer = () => {
             </p>
             <p className="text-muted-foreground text-sm mt-4">
               E-mail:{" "}
-              <a href="mailto:adnan16zukic@gmail.com" className="text-primary hover:underline">
-                adnan16zukic@gmail.com
+              <a href={mailLink} className="text-primary hover:underline">
+                {CONTACT.email}
+              </a>
+            </p>
+            <p className="text-muted-foreground text-sm mt-2">
+              Telefon:{" "}
+              <a href={telLink} className="text-primary hover:underline">
+                {CONTACT.phoneDisplay}
               </a>
             </p>
           </div>
