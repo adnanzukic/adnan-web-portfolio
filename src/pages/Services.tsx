@@ -8,39 +8,39 @@ import {
 const services = [
   {
     icon: Globe,
-    title: "Website Development",
-    desc: "Custom-built, modern websites tailored to your business needs. Every website is designed to be fast, responsive, and optimized for conversions.",
-    benefits: ["Mobile-friendly responsive design", "Fast loading speeds", "Modern UI/UX principles"],
+    title: "Izrada web sajtova",
+    desc: "Moderni sajtovi izrađeni po mjeri vašeg biznisa. Svaki sajt je brz, prilagođen svim uređajima i optimizovan tako da posjetioce pretvara u klijente.",
+    benefits: ["Prilagođen mobilnim uređajima", "Brzo učitavanje", "Moderan UI/UX dizajn"],
   },
   {
     icon: RefreshCw,
-    title: "Website Redesign",
-    desc: "Transform your outdated website into a modern, high-performing platform that reflects your brand and engages your customers.",
-    benefits: ["Improved user experience", "Updated modern design", "Better performance and SEO"],
+    title: "Redizajn sajta",
+    desc: "Pretvorite zastarjeli sajt u moderan i brz sajt koji odražava vaš brend i privlači vaše klijente.",
+    benefits: ["Bolje korisničko iskustvo", "Osvježen, moderan dizajn", "Bolje performanse i SEO"],
   },
   {
     icon: FileText,
-    title: "Landing Pages",
-    desc: "High-converting landing pages designed to capture leads and drive action for your marketing campaigns.",
-    benefits: ["Conversion-optimized layouts", "A/B testing ready", "Fast turnaround time"],
+    title: "Landing stranice",
+    desc: "Landing stranice visoke konverzije koje prikupljaju upite i podstiču posjetioce na akciju u vašim marketinškim kampanjama.",
+    benefits: ["Rasporedi optimizovani za konverziju", "Spremno za A/B testiranje", "Brza isporuka"],
   },
   {
     icon: Search,
-    title: "SEO Optimization",
-    desc: "Improve your website's visibility on search engines to attract more organic traffic and potential customers.",
-    benefits: ["On-page SEO optimization", "Technical SEO improvements", "Local SEO for businesses"],
+    title: "SEO optimizacija",
+    desc: "Unaprijedite vidljivost vašeg sajta na pretraživačima i privucite više organskog prometa i potencijalnih klijenata.",
+    benefits: ["On-page SEO optimizacija", "Tehnička SEO poboljšanja", "Lokalni SEO za biznise"],
   },
   {
     icon: Code2,
-    title: "WordPress Websites",
-    desc: "Professional WordPress websites with custom themes, plugins, and easy content management for your business.",
-    benefits: ["Easy to manage content", "Custom themes and plugins", "Secure and maintained"],
+    title: "WordPress sajtovi",
+    desc: "Profesionalni WordPress sajtovi sa prilagođenim temama i dodacima te jednostavnim upravljanjem sadržajem.",
+    benefits: ["Jednostavno uređivanje sadržaja", "Prilagođene teme i dodaci", "Sigurno i redovno održavano"],
   },
   {
     icon: ShoppingCart,
-    title: "E-commerce Websites",
-    desc: "Full-featured online stores that make it easy for your customers to browse and purchase your products or services.",
-    benefits: ["Product catalog management", "Secure checkout process", "Inventory and order management"],
+    title: "Online prodavnice",
+    desc: "Potpuno funkcionalne online prodavnice koje vašim kupcima olakšavaju pregled i kupovinu vaših proizvoda ili usluga.",
+    benefits: ["Upravljanje katalogom proizvoda", "Siguran proces plaćanja", "Upravljanje zalihama i narudžbama"],
   },
 ];
 
@@ -52,9 +52,9 @@ const Services = () => {
       <section className="pt-32 section-padding">
         <div className="container-narrow">
           <AnimatedSection>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">Services</h1>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">Usluge</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mb-16">
-              Comprehensive web development services to help your business grow online.
+              Sveobuhvatne usluge web razvoja koje pomažu vašem biznisu da raste online.
             </p>
           </AnimatedSection>
 

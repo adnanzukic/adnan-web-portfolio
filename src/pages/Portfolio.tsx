@@ -8,10 +8,10 @@ import ecommerce from "@/assets/project-ecommerce.png";
 import restaurant from "@/assets/project-restaurant.png";
 
 const projects = [
-  { img: gymweb, title: "Gym Website Concept", category: "Web Design" },
-  { img: lawfirm, title: "Lawfirm Website Concept", category: "Web Design" },
-  { img: ecommerce, title: "Ecommerce Website Concept", category: "E-commerce" },
-  { img: restaurant, title: "Restaurant Website Concept", category: "Web Design" },
+  { img: gymweb, title: "Koncept sajta za teretanu", category: "Web dizajn" },
+  { img: lawfirm, title: "Koncept sajta za advokatsku kancelariju", category: "Web dizajn" },
+  { img: ecommerce, title: "Koncept online prodavnice", category: "Online prodavnica" },
+  { img: restaurant, title: "Koncept sajta za restoran", category: "Web dizajn" },
 ];
 
 const Portfolio = () => {
@@ -28,7 +28,7 @@ const Portfolio = () => {
               Portfolio
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mb-16">
-              A showcase of concept projects demonstrating modern web design.
+              Pregled konceptualnih projekata koji prikazuju savremeni web dizajn.
             </p>
           </AnimatedSection>
 
@@ -49,7 +49,7 @@ const Portfolio = () => {
                         onClick={() => setSelectedProject(p)}
                         className="px-6 py-2 border border-white text-white text-sm uppercase tracking-wider hover:bg-white hover:text-black transition"
                       >
-                        View Project
+                        Pogledajte projekat
                       </button>
                     </div>
                   </div>
@@ -88,11 +88,11 @@ const Portfolio = () => {
               </h2>
 
               <p className="text-muted-foreground leading-relaxed mb-6">
-                This concept project was created to demonstrate modern website
-                design principles for small and medium-sized businesses.
-                The layout focuses on clean typography, strong visual hierarchy,
-                and conversion-oriented sections that help businesses present
-                their services professionally online.
+                Ovaj konceptualni projekat izrađen je kako bi prikazao principe
+                modernog web dizajna za mala i srednja preduzeća. Raspored se
+                fokusira na čistu tipografiju, jasnu vizuelnu hijerarhiju i
+                sekcije usmjerene na konverziju, koje pomažu biznisima da svoje
+                usluge profesionalno predstave online.
               </p>
 
               <div className="flex gap-4">
@@ -100,14 +100,14 @@ const Portfolio = () => {
                   onClick={() => setSelectedProject(null)}
                   className="px-6 py-2 border border-border rounded-md hover:bg-muted transition"
                 >
-                  Close
+                  Zatvori
                 </button>
 
                 <a
-                  href="mailto:adnan16zukic@gmail.com?subject=Website%20Project%20Inquiry&body=Hello%20Adnan,%20I%20am%20interested%20in%20a%20website%20similar%20to%20this%20concept.%20Please%20send%20me%20more%20details."
+                  href="mailto:adnan16zukic@gmail.com?subject=Upit%20za%20izradu%20sajta&body=Pozdrav%20Adnane,%20zanima%20me%20sajt%20sli%C4%8Dan%20ovom%20konceptu.%20Molim%20Vas%20da%20mi%20po%C5%A1aljete%20vi%C5%A1e%20detalja."
                   className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:opacity-90 transition"
                 >
-                  Start a Similar Project
+                  Zatražite sličan projekat
                 </a>
               </div>
             </div>
