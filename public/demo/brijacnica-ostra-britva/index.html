@@ -183,7 +183,7 @@
     <a class="logo display" href="#top" aria-label="Oštra Britva, početna"><span class="mini" aria-hidden="true"></span>Oštra Britva</a>
     <nav aria-label="Glavni meni">
       <ul>
-        <li><a href="#cjenik">Cjenik</a></li>
+        <li><a href="#Cjenovnik">Cjenovnik</a></li>
         <li><a href="#rezervacija">Termin</a></li>
         <li><a href="#majstori">Majstori</a></li>
         <li><a href="#lokacija">Lokacija</a></li>
@@ -202,7 +202,7 @@
         <p class="lead">Muški frizerski salon i brijačnica. Šišanje, fade i njegovana brada, uz termin koji rezervišete online za minut.</p>
         <div class="actions">
           <a class="btn" href="#rezervacija">Rezerviši termin</a>
-          <a class="btn alt" href="#cjenik">Cjenik</a>
+          <a class="btn alt" href="#Cjenovnik">Cjenovnik</a>
         </div>
       </div>
       <div class="pole-wrap" aria-hidden="true">
@@ -215,10 +215,10 @@
 
   <div class="stripe-band" aria-hidden="true"></div>
 
-  <section class="block" id="cjenik">
+  <section class="block" id="Cjenovnik">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="display">Cjenik</h2>
+        <h2 class="display">Cjenovnik</h2>
         <p>Fiksne cijene i jasno trajanje. Ono što vidite ovdje, to i plaćate.</p>
       </div>
       <div class="plist" id="plist"></div>
@@ -337,7 +337,7 @@
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function $(id) { return document.getElementById(id); }
 
-  /* ---------- cjenik ---------- */
+  /* ---------- Cjenovnik ---------- */
   $('plist').innerHTML = services.map(function (s) {
     return '<div class="prow"><div><h3>' + s.n + (s.hot ? ' <span class="hot">Najtraženije</span>' : '') + '</h3><p>' + s.d + '</p></div>' +
       '<div class="min">' + s.m + ' min</div><div class="price">' + s.p + '<small>KM</small></div></div>';
