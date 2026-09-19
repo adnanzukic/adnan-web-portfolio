@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Studio Pramen | Frizerski i kozmetički salon (demo)</title>
+<meta name="description" content="Demo koncept sajta za frizerski i kozmetički salon. Izradio Adnan Zukić." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  @property --shade { syntax: '<color>'; inherits: true; initial-value: #d8a850; }
+
+  :root {
+    --ink: #1d1230;
+    --ink-soft: #4b3d63;
+    --paper: #f7f2fa;
+    --paper-2: #ece2f3;
+    --line: rgba(29, 18, 48, .16);
+    --shade: #d8a850;
+    --display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+    --body: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif;
+    --wrap: min(1160px, 92vw);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--body); font-size: 17px; line-height: 1.6; color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  img, svg { display: block; max-width: 100%; }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 4px; }
+  .wrap { width: var(--wrap); margin-inline: auto; }
+  h1, h2, h3 { font-family: var(--display); letter-spacing: -.025em; line-height: 1.02; }
+  h2 { font-size: clamp(2rem, 4.2vw, 3.3rem); font-weight: 700; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font: 600 1rem/1 var(--body); padding: 1rem 1.6rem; border-radius: 999px; border: 2px solid var(--ink); background: var(--ink); color: var(--paper); text-decoration: none; cursor: pointer; transition: transform .15s ease, background .15s ease, color .15s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.ghost { background: transparent; color: var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: var(--paper); }
+
+  /* demo strip */
+  .demo-strip { background: var(--ink); color: var(--paper); font-size: .875rem; text-align: center; padding: .6rem 1rem; }
+  .demo-strip a { color: #fff; font-weight: 600; text-underline-offset: 3px; }
+
+  /* header */
+  header.top { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: .9rem 0; }
+  .logo { font-family: var(--display); font-weight: 800; font-size: 1.6rem; letter-spacing: -.04em; text-decoration: none; display: flex; align-items: center; gap: .55rem; }
+  .logo svg { width: 26px; height: 26px; }
+  .nav ul { display: flex; gap: 2rem; list-style: none; }
+  .nav ul a { text-decoration: none; font-weight: 500; font-size: .95rem; }
+  .nav ul a:hover { text-decoration: underline; text-underline-offset: 6px; }
+  .nav .btn { padding: .75rem 1.2rem; font-size: .92rem; }
+
+  /* hero */
+  .hero { padding: clamp(2rem, 5vw, 4.5rem) 0 clamp(3rem, 6vw, 5rem); }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+  .hero h1 { font-size: clamp(2.9rem, 7vw, 6rem); font-weight: 800; letter-spacing: -.035em; margin-bottom: 1.5rem; }
+  .hero p.lead { font-size: 1.2rem; color: var(--ink-soft); max-width: 44ch; margin-bottom: 2rem; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-bottom: 2rem; }
+  .status { display: inline-flex; align-items: center; gap: .6rem; font-size: .95rem; font-weight: 500; }
+  .status i { width: 10px; height: 10px; border-radius: 50%; background: #999; flex-shrink: 0; }
+  .status.open i { background: #2fa36b; box-shadow: 0 0 0 4px rgba(47, 163, 107, .2); }
+
+  .picker { display: flex; flex-direction: column; align-items: center; gap: 1.4rem; }
+  .arch { position: relative; width: min(400px, 100%); aspect-ratio: 4 / 5.2; border-radius: 999px 999px 28px 28px; overflow: hidden; transition: --shade .6s ease;
+    background: linear-gradient(165deg, color-mix(in srgb, var(--shade) 60%, #fff) 0%, var(--shade) 48%, color-mix(in srgb, var(--shade) 78%, #000) 100%); }
+  .arch svg.strands { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .arch .tag { position: absolute; left: 1rem; right: 1rem; bottom: 1rem; background: var(--paper); border-radius: 20px; padding: 1.1rem 1.2rem; }
+  .arch .tag small { display: block; font-size: .85rem; color: var(--ink-soft); }
+  .arch .tag strong { display: block; font: 700 1.55rem/1.1 var(--display); letter-spacing: -.02em; margin: .15rem 0 .55rem; }
+  .arch .tag .row { display: flex; align-items: center; justify-content: space-between; gap: .8rem; flex-wrap: wrap; }
+  .arch .tag .price { font-weight: 600; }
+  .arch .tag button { font: 600 .9rem/1 var(--body); padding: .7rem 1.1rem; border-radius: 999px; border: 2px solid var(--ink); background: var(--ink); color: var(--paper); cursor: pointer; }
+
+  .swatches { display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; }
+  .swatches button { width: 42px; height: 42px; border-radius: 50%; border: 3px solid var(--paper); background: var(--c); cursor: pointer; box-shadow: 0 0 0 1.5px var(--line); transition: transform .15s ease, box-shadow .15s ease; }
+  .swatches button:hover { transform: scale(1.12); }
+  .swatches button[aria-checked="true"] { box-shadow: 0 0 0 3px var(--ink); transform: scale(1.12); }
+  .picker-cap { font-size: .95rem; color: var(--ink-soft); }
+
+  /* sections */
+  section.block { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
+  .sec-head { display: flex; align-items: end; justify-content: space-between; gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  .sec-head p { max-width: 42ch; color: var(--ink-soft); }
+
+  /* price list */
+  .prices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem clamp(2rem, 6vw, 6rem); }
+  .group h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+  .group dl > div { display: flex; align-items: baseline; gap: .6rem; padding: .55rem 0; }
+  .group dt { font-weight: 500; }
+  .group dd { white-space: nowrap; font-weight: 600; }
+  .group dl > div::before { content: ""; order: 1; flex: 1; border-bottom: 2px dotted var(--line); transform: translateY(-4px); }
+  .group dt { order: 0; } .group dd { order: 2; }
+  .group .note { font-size: .9rem; color: var(--ink-soft); margin-top: .8rem; }
+
+  /* gallery */
+  .gallery-band { background: var(--paper-2); }
+  .gallery { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 210px; gap: 1rem; }
+  .tile { position: relative; overflow: hidden; background-size: cover; background-position: center; }
+  .tile svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .tile figcaption { position: absolute; left: .8rem; bottom: .8rem; background: var(--paper); font-size: .85rem; font-weight: 500; padding: .35rem .8rem; border-radius: 999px; }
+  .t1 { grid-column: span 5; grid-row: span 2; border-radius: 999px 999px 20px 20px; }
+  .t2 { grid-column: span 4; border-radius: 8px; }
+  .t3 { grid-column: span 3; border-radius: 60px 8px 60px 8px; }
+  .t4 { grid-column: span 3; border-radius: 8px; }
+  .t5 { grid-column: span 4; border-radius: 90px 8px 90px 8px; }
+  .t6 { grid-column: span 12; border-radius: 8px 60px 8px 60px; }
+  .gallery-note { margin-top: 1.2rem; font-size: .9rem; color: var(--ink-soft); }
+
+  /* team */
+  .team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+  .person { display: grid; grid-template-columns: 76px 1fr; gap: 1.2rem; align-items: start; }
+  .avatar { width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center; font: 800 1.9rem/1 var(--display); color: #fff; background: var(--c); }
+  .person h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: .25rem; }
+  .person p { color: var(--ink-soft); font-size: .98rem; }
+
+  /* reviews */
+  .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+  .review { padding: 0 2rem; border-left: 2px solid var(--ink); }
+  .review:first-child { padding-left: 0; border-left: 0; }
+  .review blockquote { font: 500 1.35rem/1.3 var(--display); letter-spacing: -.02em; margin-bottom: 1.2rem; }
+  .review cite { font-style: normal; font-size: .92rem; color: var(--ink-soft); }
+
+  /* contact */
+  .contact-band { background: var(--ink); color: var(--paper); }
+  .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 6vw, 6rem); }
+  .contact-band h2 { margin-bottom: 1.5rem; }
+  .hours { list-style: none; margin: 1.5rem 0; }
+  .hours li { display: flex; justify-content: space-between; padding: .6rem 0; border-bottom: 1px solid rgba(247, 242, 250, .2); }
+  .hours li.today { font-weight: 600; }
+  .contact-band .status { color: var(--paper); margin-bottom: 1rem; }
+  .contact-band address { font-style: normal; color: rgba(247, 242, 250, .8); }
+  .contact-band address a { color: #fff; }
+  form { display: grid; gap: 1rem; background: var(--paper); color: var(--ink); padding: clamp(1.4rem, 3vw, 2.2rem); border-radius: 28px 28px 28px 4px; }
+  form h3 { font-size: 1.6rem; font-weight: 700; }
+  .field { display: grid; gap: .35rem; }
+  .field label { font-weight: 600; font-size: .92rem; }
+  .field input, .field select, .field textarea { font: 400 1rem/1.4 var(--body); color: var(--ink); background: #fff; border: 2px solid var(--line); border-radius: 12px; padding: .8rem .9rem; width: 100%; }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--ink); outline: none; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  footer.foot { padding: 3rem 0 4rem; font-size: .92rem; color: var(--ink-soft); }
+  footer.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+  dialog { border: 0; border-radius: 24px; padding: 2rem; max-width: min(460px, 92vw); background: var(--paper); color: var(--ink); box-shadow: 0 30px 80px rgba(29, 18, 48, .35); }
+  dialog::backdrop { background: rgba(29, 18, 48, .55); }
+  dialog h3 { font-size: 1.7rem; margin-bottom: .8rem; }
+  dialog p { color: var(--ink-soft); margin-bottom: 1.4rem; }
+  dialog .actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+
+  @media (max-width: 900px) {
+    .nav ul { display: none; }
+    .hero-grid, .contact-grid { grid-template-columns: 1fr; }
+    .prices, .team { grid-template-columns: 1fr; }
+    .reviews { grid-template-columns: 1fr; gap: 2rem; }
+    .review { padding: 0; border-left: 0; }
+    .gallery { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 160px; }
+    .t1 { grid-column: span 6; grid-row: span 2; }
+    .t2, .t3, .t4, .t5 { grid-column: span 3; }
+    .t6 { grid-column: span 6; }
+  }
+  @media (max-width: 520px) {
+    .two { grid-template-columns: 1fr; }
+    .swatches { gap: .45rem; }
+    .swatches button { width: 36px; height: 36px; }
+    .arch .tag strong { font-size: 1.3rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-strip">
+  Ovo je demo koncept sajta za frizerski salon, izradio Adnan Zukić.
+  <a href="/contact">Želite ovakav sajt za svoj salon?</a>
+</div>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Studio Pramen, početna">
+      <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 3c6 4 6 8 0 10s-6 6 0 10"/><path d="M13 3c6 4 6 8 0 10s-6 6 0 10"/><path d="M21 3c-6 4-6 8 0 10s6 6 0 10"/></svg>
+      Pramen
+    </a>
+    <nav aria-label="Glavni meni">
+      <ul>
+        <li><a href="#cjenik">Cjenik</a></li>
+        <li><a href="#radovi">Radovi</a></li>
+        <li><a href="#tim">Tim</a></li>
+        <li><a href="#utisci">Utisci</a></li>
+        <li><a href="#rezervacija">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#rezervacija">Rezerviši termin</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Kosa koju ćete htjeti pokazati.</h1>
+        <p class="lead">Frizerski i kozmetički studio u centru grada. Farbanje, šišanje i njega uz termin koji rezervišete za minut.</p>
+        <div class="actions">
+          <a class="btn" href="#rezervacija">Rezerviši termin</a>
+          <a class="btn ghost" href="#cjenik">Pogledaj cjenik</a>
+        </div>
+        <p class="status" id="status-hero"><i></i><span>Provjeravamo radno vrijeme…</span></p>
+      </div>
+
+      <div class="picker">
+        <div class="arch" id="arch">
+          <svg class="strands" id="arch-strands" aria-hidden="true"></svg>
+          <div class="tag" aria-live="polite">
+            <small>Odabrana nijansa</small>
+            <strong id="shade-name">Medena plava</strong>
+            <div class="row">
+              <span class="price" id="shade-info">Balayage, od 110 KM</span>
+              <button type="button" id="shade-book">Rezerviši ovu nijansu</button>
+            </div>
+          </div>
+        </div>
+        <div class="swatches" id="swatches" role="radiogroup" aria-label="Odaberite nijansu kose"></div>
+        <p class="picker-cap">Dodirnite nijansu koja vam se sviđa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="cjenik">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Cjenik</h2>
+        <p>Cijene su početne i zavise od dužine i gustine kose. Tačnu cijenu dogovaramo prije početka rada.</p>
+      </div>
+      <div class="prices">
+        <div class="group">
+          <h3>Šišanje i frizure</h3>
+          <dl>
+            <div><dt>Žensko šišanje i feniranje</dt><dd>od 20 KM</dd></div>
+            <div><dt>Muško šišanje</dt><dd>12 KM</dd></div>
+            <div><dt>Dječije šišanje</dt><dd>8 KM</dd></div>
+            <div><dt>Feniranje</dt><dd>od 10 KM</dd></div>
+            <div><dt>Svečana frizura</dt><dd>od 35 KM</dd></div>
+          </dl>
+        </div>
+        <div class="group">
+          <h3>Boja</h3>
+          <dl>
+            <div><dt>Farbanje korijena</dt><dd>od 40 KM</dd></div>
+            <div><dt>Farbanje cijele kose</dt><dd>od 55 KM</dd></div>
+            <div><dt>Balayage i ombre</dt><dd>od 110 KM</dd></div>
+            <div><dt>Toniranje i sjaj</dt><dd>od 30 KM</dd></div>
+          </dl>
+        </div>
+        <div class="group">
+          <h3>Njega kose</h3>
+          <dl>
+            <div><dt>Maska i regeneracija</dt><dd>od 25 KM</dd></div>
+            <div><dt>Keratinska njega</dt><dd>od 80 KM</dd></div>
+          </dl>
+        </div>
+        <div class="group">
+          <h3>Kozmetika</h3>
+          <dl>
+            <div><dt>Čišćenje lica</dt><dd>35 KM</dd></div>
+            <div><dt>Oblikovanje obrva</dt><dd>10 KM</dd></div>
+            <div><dt>Dnevno šminkanje</dt><dd>od 30 KM</dd></div>
+            <div><dt>Svečano šminkanje</dt><dd>od 45 KM</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block gallery-band" id="radovi">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Naši radovi</h2>
+        <p>Nekoliko stilova koje najčešće radimo. Na vašem sajtu ovdje idu prave fotografije iz salona.</p>
+      </div>
+      <div class="gallery" id="gallery">
+        <figure class="tile t1" data-a="#e7c27a" data-b="#b9822f" data-seed="11"><figcaption>Balayage u medenim tonovima</figcaption></figure>
+        <figure class="tile t2" data-a="#c26a3f" data-b="#7c2f18" data-seed="23"><figcaption>Bakarni ton</figcaption></figure>
+        <figure class="tile t3" data-a="#f0a9c0" data-b="#c9628a" data-seed="37"><figcaption>Svečana frizura</figcaption></figure>
+        <figure class="tile t4" data-a="#ebe6dc" data-b="#b9b0a0" data-seed="41"><figcaption>Platinasta plava</figcaption></figure>
+        <figure class="tile t5" data-a="#9a6fd0" data-b="#57329a" data-seed="53"><figcaption>Orhideja</figcaption></figure>
+        <figure class="tile t6" data-a="#6d4636" data-b="#2e1a13" data-seed="67"><figcaption>Čokoladni ton s njegom</figcaption></figure>
+      </div>
+      <p class="gallery-note">Fotografije iz salona: svaka pločica prima pravu sliku, a ovi valoviti uzorci su privremeni.</p>
+    </div>
+  </section>
+
+  <section class="block" id="tim">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Ko vas šiša</h2>
+        <p>Mali tim, isti ljudi svaki put. Znamo vašu kosu i ne moramo pitati šta ste željeli prošli put.</p>
+      </div>
+      <div class="team">
+        <div class="person">
+          <div class="avatar" style="--c:#7b4bb7">M</div>
+          <div><h3>Mira</h3><p>Vlasnica. Boja, balayage i šišanje. Radi 14 godina, a novu tehniku uči svake godine.</p></div>
+        </div>
+        <div class="person">
+          <div class="avatar" style="--c:#c9628a">A</div>
+          <div><h3>Amina</h3><p>Svečane frizure i šminkanje. Nevjeste zakazuju mjesec ranije.</p></div>
+        </div>
+        <div class="person">
+          <div class="avatar" style="--c:#a4482c">D</div>
+          <div><h3>Dino</h3><p>Muško i dječije šišanje, kratko i precizno. Bez čekanja kad zakažete.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="utisci" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2>Šta kažu klijentice</h2></div>
+      <div class="reviews">
+        <div class="review"><blockquote>Prvi put da mi boja izgleda isto kod kuće kao i u salonu.</blockquote><cite>Emina K.</cite></div>
+        <div class="review"><blockquote>Zakažem online za minut i dođem tačno na vrijeme. Nema čekanja.</blockquote><cite>Lejla H.</cite></div>
+        <div class="review"><blockquote>Mira je objasnila šta će raditi i koliko košta prije nego što je počela.</blockquote><cite>Nedim S.</cite></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block contact-band" id="rezervacija">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Zakažite termin</h2>
+        <p class="status" id="status-contact"><i></i><span></span></p>
+        <ul class="hours" id="hours">
+          <li data-d="1"><span>Ponedjeljak</span><span>09:00 do 20:00</span></li>
+          <li data-d="2"><span>Utorak</span><span>09:00 do 20:00</span></li>
+          <li data-d="3"><span>Srijeda</span><span>09:00 do 20:00</span></li>
+          <li data-d="4"><span>Četvrtak</span><span>09:00 do 20:00</span></li>
+          <li data-d="5"><span>Petak</span><span>09:00 do 20:00</span></li>
+          <li data-d="6"><span>Subota</span><span>09:00 do 16:00</span></li>
+          <li data-d="0"><span>Nedjelja</span><span>Zatvoreno</span></li>
+        </ul>
+        <address>
+          Ulica Primjera 12, 75000 Tuzla<br />
+          <a href="tel:+38761000000">+387 61 000 000</a>
+        </address>
+      </div>
+
+      <form id="book-form" novalidate>
+        <h3>Rezervacija</h3>
+        <div class="two">
+          <div class="field"><label for="f-name">Ime i prezime</label><input id="f-name" required autocomplete="name" /></div>
+          <div class="field"><label for="f-phone">Telefon</label><input id="f-phone" type="tel" required autocomplete="tel" /></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="f-service">Usluga</label><select id="f-service"></select></div>
+          <div class="field"><label for="f-date">Željeni dan</label><input id="f-date" type="date" required /></div>
+        </div>
+        <div class="field"><label for="f-note">Napomena</label><textarea id="f-note" rows="3" placeholder="Npr. želim toniranje u hladnijoj nijansi"></textarea></div>
+        <button class="btn" type="submit">Pošalji zahtjev za termin</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© Studio Pramen. Izmišljen salon, sav sadržaj je primjer.</span>
+    <span>Demo izradio <a href="/">Adnan Zukić</a>. <a href="/portfolio">Nazad na portfolio</a></span>
+  </div>
+</footer>
+
+<dialog id="demo-dialog">
+  <h3>Ovo je demo</h3>
+  <p>Na pravom sajtu ovaj zahtjev stiže direktno na vaš WhatsApp ili Viber, s imenom klijentice, uslugom i željenim terminom. Ništa nije poslano.</p>
+  <div class="actions">
+    <a class="btn" href="/contact">Želim ovakav sajt</a>
+    <button class="btn ghost" type="button" id="dialog-close">Zatvori</button>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  /* ---------- valoviti pramenovi (privremene "fotografije") ---------- */
+  function rng(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function strands(svg, o) {
+    var r = rng(o.seed), W = 400, H = 500, out = '';
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+    for (var i = 0; i < o.count; i++) {
+      var x0 = (i / (o.count - 1)) * W * 1.3 - W * .15, amp = 18 + r() * 46, freq = .8 + r() * 1.2, ph = r() * 6.28, d = '';
+      for (var y = -10; y <= H + 10; y += 10) {
+        var x = x0 + Math.sin(y / H * Math.PI * freq + ph) * amp;
+        d += (y === -10 ? 'M' : 'L') + x.toFixed(1) + ' ' + y;
+      }
+      out += '<path d="' + d + '" fill="none" stroke="' + o.colors[i % o.colors.length] + '" stroke-width="' + (o.w + r() * o.w) .toFixed(2) + '" stroke-opacity="' + (o.op * (.55 + r() * .45)).toFixed(2) + '" stroke-linecap="round"/>';
+    }
+    svg.innerHTML = out;
+  }
+
+  /* ---------- odabir nijanse ---------- */
+  var shades = [
+    { n: 'Platinasta plava', c: '#e6e0d6', s: 'Dekoloracija i toniranje, od 120 KM', f: 'Dekoloracija i toniranje' },
+    { n: 'Medena plava', c: '#d8a850', s: 'Balayage, od 110 KM', f: 'Balayage i ombre' },
+    { n: 'Karamel', c: '#b5763a', s: 'Preljev i sjaj, od 60 KM', f: 'Toniranje i sjaj' },
+    { n: 'Bakar', c: '#a4482c', s: 'Farbanje cijele kose, od 55 KM', f: 'Farbanje cijele kose' },
+    { n: 'Čokolada', c: '#4a2c22', s: 'Boja i keratinska njega, od 65 KM', f: 'Farbanje cijele kose' },
+    { n: 'Tamno vino', c: '#6b1f3a', s: 'Boja i sjaj, od 60 KM', f: 'Farbanje cijele kose' },
+    { n: 'Orhideja', c: '#7b4bb7', s: 'Fantazijska boja, od 100 KM', f: 'Balayage i ombre' },
+    { n: 'Blush', c: '#e58aa8', s: 'Pastelni ton, od 100 KM', f: 'Balayage i ombre' }
+  ];
+  var arch = document.getElementById('arch'), sw = document.getElementById('swatches');
+  var nameEl = document.getElementById('shade-name'), infoEl = document.getElementById('shade-info');
+  var current = 1;
+  strands(document.getElementById('arch-strands'), { seed: 5, count: 30, colors: ['#ffffff', '#000000', '#ffffff'], w: .9, op: .22 });
+  shades.forEach(function (s, i) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.setAttribute('role', 'radio'); b.setAttribute('aria-label', s.n);
+    b.style.setProperty('--c', s.c); b.setAttribute('aria-checked', i === current);
+    b.addEventListener('click', function () { pick(i); });
+    sw.appendChild(b);
+  });
+  function pick(i) {
+    current = i; var s = shades[i];
+    arch.style.setProperty('--shade', s.c);
+    nameEl.textContent = s.n; infoEl.textContent = s.s;
+    [].forEach.call(sw.children, function (b, k) { b.setAttribute('aria-checked', k === i); });
+  }
+  pick(current);
+
+  /* ---------- galerija ---------- */
+  [].forEach.call(document.querySelectorAll('#gallery .tile'), function (t) {
+    t.style.background = 'linear-gradient(150deg,' + t.dataset.a + ',' + t.dataset.b + ')';
+    var s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    strands(s, { seed: +t.dataset.seed, count: 26, colors: ['#ffffff', t.dataset.a, '#000000'], w: 1, op: .3 });
+    t.insertBefore(s, t.firstChild);
+  });
+
+  /* ---------- usluge u formi ---------- */
+  var services = ['Žensko šišanje i feniranje', 'Muško šišanje', 'Dječije šišanje', 'Feniranje', 'Svečana frizura', 'Farbanje korijena', 'Farbanje cijele kose', 'Balayage i ombre', 'Toniranje i sjaj', 'Maska i regeneracija', 'Keratinska njega', 'Čišćenje lica', 'Oblikovanje obrva', 'Dnevno šminkanje', 'Svečano šminkanje'];
+  var sel = document.getElementById('f-service');
+  services.forEach(function (s) { var o = document.createElement('option'); o.textContent = s; sel.appendChild(o); });
+
+  document.getElementById('shade-book').addEventListener('click', function () {
+    var s = shades[current];
+    sel.value = s.f;
+    document.getElementById('f-note').value = 'Zanima me nijansa: ' + s.n + '.';
+    document.getElementById('rezervacija').scrollIntoView({ behavior: 'smooth' });
+    setTimeout(function () { document.getElementById('f-name').focus({ preventScroll: true }); }, 600);
+  });
+
+  /* ---------- radno vrijeme uživo ---------- */
+  var hours = { 0: null, 1: [9, 20], 2: [9, 20], 3: [9, 20], 4: [9, 20], 5: [9, 20], 6: [9, 16] };
+  var dayNames = ['nedjelju', 'ponedjeljak', 'utorak', 'srijedu', 'četvrtak', 'petak', 'subotu'];
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function statusText() {
+    var now = new Date(), d = now.getDay(), h = now.getHours() + now.getMinutes() / 60, t = hours[d];
+    if (t && h >= t[0] && h < t[1]) return { open: true, text: 'Otvoreno, radimo do ' + pad(t[1]) + ':00' };
+    for (var k = 0; k < 8; k++) {
+      var dd = (d + k) % 7, tt = hours[dd];
+      if (!tt || (k === 0 && h >= tt[0])) continue;
+      var when = k === 0 ? 'danas' : k === 1 ? 'sutra' : 'u ' + dayNames[dd];
+      return { open: false, text: 'Trenutno zatvoreno, otvaramo ' + when + ' u ' + pad(tt[0]) + ':00' };
+    }
+  }
+  var st = statusText();
+  ['status-hero', 'status-contact'].forEach(function (id) {
+    var el = document.getElementById(id);
+    el.classList.toggle('open', st.open);
+    el.querySelector('span').textContent = st.text;
+  });
+  var today = new Date().getDay();
+  [].forEach.call(document.querySelectorAll('#hours li'), function (li) { if (+li.dataset.d === today) li.classList.add('today'); });
+
+  /* ---------- forma (demo) ---------- */
+  var dateEl = document.getElementById('f-date'), d0 = new Date();
+  dateEl.min = d0.getFullYear() + '-' + pad(d0.getMonth() + 1) + '-' + pad(d0.getDate());
+  var dlg = document.getElementById('demo-dialog');
+  document.getElementById('book-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (dlg.showModal) dlg.showModal(); else alert('Ovo je demo. Ništa nije poslano.');
+  });
+  document.getElementById('dialog-close').addEventListener('click', function () { dlg.close(); });
+})();
+</script>
+</body>
+</html>
